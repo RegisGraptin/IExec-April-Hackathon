@@ -1,3 +1,5 @@
+'use client'
+
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
 function App() {
@@ -5,16 +7,9 @@ function App() {
   const { connectors, connect, status, error } = useConnect()
   const { disconnect } = useDisconnect()
 
-  console.log(connectors);
-
   return (
     <>
       <div>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    <button class="btn btn-primary">Button</button>
-
         <h2>Account</h2>
 
         <div>
