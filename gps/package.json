@@ -1,0 +1,18 @@
+{
+  "name": "gps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@iexec/dataprotector": "^0.5.1",
+    "@iexec/iexec-oracle-factory-wrapper": "^2.1.0",
+    "dotenv": "^16.4.5",
+    "graphql": "^16.8.1"
+  }
+}

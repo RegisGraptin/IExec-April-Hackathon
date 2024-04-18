@@ -1,0 +1,23 @@
+41e8725c6f11789f6434a1edf8f5d4bd0d584d51de6b8493f2238f1bfa03d0c3
+next {
+  message: 'PARAM_SET_CREATED',
+  paramSet: {
+    JSONPath: '$.latitude',
+    body: '',
+    dataType: 'string',
+    dataset: '0x0000000000000000000000000000000000000000',
+    headers: {},
+    method: 'GET',
+    url: 'https://662013b53bf790e070aeeff6.mockapi.io/api/position/Position/1'
+  }
+}
+next {
+  message: 'ORACLE_ID_COMPUTED',
+  oracleId: '0xe24c842be2085c5b007a5ff8bf25a9c7c0c2d7cf957c5ee4ab93f3a08bce147a'
+}
+next {
+  message: 'PARAM_SET_UPLOADED',
+  cid: 'QmcnFTSHEogWEhtXhRKaKPVrR3hmMk2xqERqAQTs9u7i9s',
+  multiaddr: '/ipfs/QmcnFTSHEogWEhtXhRKaKPVrR3hmMk2xqERqAQTs9u7i9s'
+}
+Oracle Creation Completed
