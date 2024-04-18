@@ -12,6 +12,10 @@ function App() {
       <div>
         <h2>Account</h2>
 
+        <h1 className="text-4xl font-bold underline red">
+          Hello world!
+        </h1>
+
         <div>
           status: {account.status}
           <br />
