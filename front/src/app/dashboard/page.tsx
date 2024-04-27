@@ -4,7 +4,7 @@ import React, { FormEvent } from "react";
 import GoogleMapReact from 'google-map-react';
 import Header from "@/components/Header";
 
-import { IExecOracleFactory } from "@iexec/iexec-oracle-factory-wrapper";
+// import { IExecOracleFactory } from "@iexec/iexec-oracle-factory-wrapper";
 // import { IExecDataProtector, getWeb3Provider } from "@iexec/dataprotector";
 
 
@@ -43,9 +43,9 @@ export default function Dashboard() {
 
   // const web3Provider = getWeb3Provider(window.ethereum);
 
-  const web3Provider = window.ethereum;
+  // const web3Provider = window.ethereum;
 
-  const factory = new IExecOracleFactory(web3Provider);
+  // const factory = new IExecOracleFactory(web3Provider);
 
 
   const addNewCard = (event: FormEvent<HTMLFormElement>) => {
@@ -57,34 +57,34 @@ export default function Dashboard() {
 
     console.log(formData)
 
-    const createOracleRes = factory.createOracle({
-      url: "https://662013b53bf790e070aeeff6.mockapi.io/api/position/Position/1",
-      method: "GET",
-      headers: {
-        //   authorization: "%API_KEY%",
-      },
-      dataType: "string",
-      JSONPath: "$.latitude",
-      // apiKey: "MY_TEST_API_KEY",
-    }).subscribe({
-      next: async (data) => {
-        console.log("next", data);
-        // console.log(data["cid"])
+    // const createOracleRes = factory.createOracle({
+    //   url: "https://662013b53bf790e070aeeff6.mockapi.io/api/position/Position/1",
+    //   method: "GET",
+    //   headers: {
+    //     //   authorization: "%API_KEY%",
+    //   },
+    //   dataType: "string",
+    //   JSONPath: "$.latitude",
+    //   // apiKey: "MY_TEST_API_KEY",
+    // }).subscribe({
+    //   next: async (data) => {
+    //     console.log("next", data);
+    //     // console.log(data["cid"])
 
-        // const readOracleRes = await factory.readOracle(
-        //   data.cid
-        // ); // Content ID of the Oracle
+    //     // const readOracleRes = await factory.readOracle(
+    //     //   data.cid
+    //     // ); // Content ID of the Oracle
 
-        // console.log("Data: ", readOracleRes)
+    //     // console.log("Data: ", readOracleRes)
 
-      },
-      error: (error) => {
-        console.log("error", error);
-      },
-      complete: () => {
-        console.log("Oracle Creation Completed");
-      },
-    });
+    //   },
+    //   error: (error) => {
+    //     console.log("error", error);
+    //   },
+    //   complete: () => {
+    //     console.log("Oracle Creation Completed");
+    //   },
+    // });
 
 
   }
