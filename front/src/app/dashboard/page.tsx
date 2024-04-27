@@ -7,40 +7,39 @@ import Header from "@/components/Header";
 import { IExecOracleFactory } from "@iexec/iexec-oracle-factory-wrapper";
 // import { IExecDataProtector, getWeb3Provider } from "@iexec/dataprotector";
 
-const cars = [
-  { id: 1, color: 'Blue', packageId: 11111111 },
-  { id: 2, color: 'Red', packageId: 11111112 },
-  { id: 3, color: 'Yellow', packageId: 11111113 },
-  // Add more cars as needed
-];
-
-const CarList = () => {
-  return (
-
-    <div>
-
-      {cars.map((car) => (
-        <div key={car.id} className="card ml-5 mr-5 mb-5 bg-primary text-primary-content">
-          <div className="card-body">
-            <h2 className="card-title">Vehicule #{car.id}</h2>
-            <p>Package delivery - ID: #{car.packageId}</p>
-            {/* <div>{car.brand} {car.model}</div>
-            <div>{car.year} - {car.color}</div> */}
-            <div className="card-actions justify-end">
-              <button className="btn">Buy Now</button>
-            </div>
-          </div>
-        </div>
-      ))}
-
-    </div>
-  );
-};
-
-
-
 
 export default function Dashboard() {
+
+
+  const cars = [
+    { id: 1, color: 'Blue', packageId: 11111111 },
+    { id: 2, color: 'Red', packageId: 11111112 },
+    { id: 3, color: 'Yellow', packageId: 11111113 },
+    // Add more cars as needed
+  ];
+  
+  const CarList = () => {
+    return (
+  
+      <div>
+  
+        {cars.map((car) => (
+          <div key={car.id} className="card ml-5 mr-5 mb-5 bg-primary text-primary-content">
+            <div className="card-body">
+              <h2 className="card-title">Vehicule #{car.id}</h2>
+              <p>Package delivery - ID: #{car.packageId}</p>
+              {/* <div>{car.brand} {car.model}</div>
+              <div>{car.year} - {car.color}</div> */}
+              <div className="card-actions justify-end">
+                <button className="btn">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        ))}
+  
+      </div>
+    );
+  };
 
   // const web3Provider = getWeb3Provider(window.ethereum);
 
