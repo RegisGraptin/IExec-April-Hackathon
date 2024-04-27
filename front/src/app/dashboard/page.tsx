@@ -5,9 +5,7 @@ import GoogleMapReact from 'google-map-react';
 import Header from "@/components/Header";
 
 import { IExecOracleFactory } from "@iexec/iexec-oracle-factory-wrapper";
-import { IExecDataProtector, getWeb3Provider } from "@iexec/dataprotector";
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+// import { IExecDataProtector, getWeb3Provider } from "@iexec/dataprotector";
 
 const cars = [
   { id: 1, color: 'Blue', packageId: 11111111 },
@@ -43,51 +41,51 @@ const CarList = () => {
 
 
 export default function Dashboard() {
-  
+
   // const web3Provider = getWeb3Provider(window.ethereum);
 
   const web3Provider = window.ethereum;
 
   const factory = new IExecOracleFactory(web3Provider);
-  
-  
+
+
   const addNewCard = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-  
+
     console.log(event.currentTarget)
-  
+
     const formData = new FormData(event.currentTarget)
-  
+
     console.log(formData)
-   
+
     const createOracleRes = factory.createOracle({
       url: "https://662013b53bf790e070aeeff6.mockapi.io/api/position/Position/1",
       method: "GET",
       headers: {
-      //   authorization: "%API_KEY%",
+        //   authorization: "%API_KEY%",
       },
       dataType: "string",
       JSONPath: "$.latitude",
       // apiKey: "MY_TEST_API_KEY",
     }).subscribe({
-        next: async (data) => {
-          console.log("next", data);
-          console.log(data.cid)
+      next: async (data) => {
+        console.log("next", data);
+        // console.log(data["cid"])
 
-          // const readOracleRes = await factory.readOracle(
-          //   data.cid
-          // ); // Content ID of the Oracle
+        // const readOracleRes = await factory.readOracle(
+        //   data.cid
+        // ); // Content ID of the Oracle
 
-          // console.log("Data: ", readOracleRes)
+        // console.log("Data: ", readOracleRes)
 
-        },
-        error: (error) => {
-          console.log("error", error);
-        },
-        complete: () => {
-          console.log("Oracle Creation Completed");
-        }, 
-      });
+      },
+      error: (error) => {
+        console.log("error", error);
+      },
+      complete: () => {
+        console.log("Oracle Creation Completed");
+      },
+    });
 
 
   }
@@ -126,7 +124,12 @@ export default function Dashboard() {
 
             <CarList />
 
-            <button className="btn" onClick={() => document.getElementById('my_modal_2').showModal()}>
+            <button className="btn" onClick={() => {
+              if (document) {
+                (document.getElementById('my_modal_2') as HTMLFormElement).showModal();
+              }
+            }
+            }>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
               </svg>
