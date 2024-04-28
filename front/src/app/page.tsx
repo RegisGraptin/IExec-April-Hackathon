@@ -24,7 +24,7 @@ function App() {
               By leveraging the power of blockchain, we provide real-time insights into
               your fleet's movements while ensuring the integrity and confidentiality of your data.
             </p>
-            
+
             <Link className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800" href="/dashboard">
               See the Dashboard
               <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
@@ -68,7 +68,9 @@ function App() {
             <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
               By using IExec Oracle technology, we ensure the security and privacy of your data like never before. Each transaction and interaction is securely recorded on the blockchain, providing an immutable and tamper-proof ledger of your vehicle's journey and ownership history.
 
-              <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+            </p>
+            <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
 
               With RouteGuard, you can monitor your vehicle fleet in real-time, witnessing and verifying each interaction. Whether you're overseeing package deliveries or managing logistics, RouteGuard provides transparency at every step of the process.
             </p>
@@ -99,8 +101,11 @@ function App() {
 
               By using the IExec enclave Oracle system, you are the sole entity with access to your data. This ensures the utmost privacy and security, giving you peace of mind that your information remains confidential.
 
-              <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+            </p>
 
+            <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+
+            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
               Enable cross-application computation securely with RouteGuard. By allowing applications to access your fleet's position privately in a secure environment, you can facilitate private route planning and delivery processes.
 
               Manage your operations efficiently while safeguarding sensitive information.
