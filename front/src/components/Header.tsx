@@ -41,12 +41,10 @@ export default function Header() {
                         </li>
                     )}
 
-                    {account.status !== 'connected' && connectors.map((connector) => (
+                    {account.status !== 'connected' && connectors.map((connector, index) => (
 
-
-                        <li>
+                        <li key={connector.uid}>
                             <button
-                                key={connector.uid}
                                 onClick={() => connect({ connector })}
                                 type="button"
                             >

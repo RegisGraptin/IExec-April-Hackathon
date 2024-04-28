@@ -37,6 +37,15 @@ export default function Dashboard() {
   // List of all markers to monitor position
   const [markers, setMarkers] = useState<MarkerType[]>([]);
 
+  const [cid, setCid] = useState<string>("");
+
+  const [cars, setCars] = useState<Car[]>([
+    car1,
+    car2,
+    // Add more cars as needed
+  ]);
+
+
   // Coordinate to center the maps
   const [centerCordinates, setCenterCordinates] = useState({
     lat: 45.750000,
@@ -45,6 +54,8 @@ export default function Dashboard() {
 
   // Initialize the reference when the map is loaded
   const onGoogleApiLoaded = ({ map }) => { mapRef.current = map; }
+
+
 
 
   const changeCenterMap = (car: Car) => {
@@ -64,12 +75,6 @@ export default function Dashboard() {
       lng: coordinate.longitude
     }));
   }
-
-  const cars: Car[] = [
-    car1,
-    car2,
-    // Add more cars as needed
-  ];
 
   useEffect(() => {
 
@@ -99,7 +104,7 @@ export default function Dashboard() {
       <div>
 
         {cars.map((car) => (
-          <div key={car.id} className="card ml-5 mr-5 mb-5 bg-primary text-primary-content">
+          <div key={"car-" + car.id} className="card ml-5 mr-5 mb-5 bg-primary text-primary-content">
             <div className="card-body bg-base-100 rounded-lg">
 
               <div className="flex">
@@ -140,7 +145,7 @@ export default function Dashboard() {
 
   const createNewOracle = async (url: string) => {
 
-    const cid = await new Promise((resolve, reject) => {
+    await new Promise((resolve, reject) => {
       factory.createOracle({
         url: url,
         method: "GET",
@@ -149,6 +154,7 @@ export default function Dashboard() {
       }).subscribe({
         next: async (data) => {
           console.log("New Oracle created, cid: ", data.cid);
+          setCid(data.cid)
           resolve(data.cid);
         },
         error: (error) => {
@@ -163,7 +169,6 @@ export default function Dashboard() {
 
     // We need to update the data first to initialize the oracle
     const updatedData = await new Promise((resolve, reject) => {
-      console.log("cid used:", cid);
       factory.updateOracle({
         cid: cid,
         targetBlockchains: ["134", "137"],
@@ -193,10 +198,33 @@ export default function Dashboard() {
 
     // Get the data 
     const formData = new FormData(event.currentTarget)
-    let cid = await createNewOracle(formData.get("url"))
 
-    console.log("New car added on the network!")
-    console.log("cid:", cid)
+    const new_id = cars[cars.length - 1].id + 1;
+
+    // Add the car
+    setCars(
+      [
+        ...cars,
+      {
+        "id": new_id,
+        "color": "green",
+        "customerId": Number("1111111" + String(new_id)),
+        "coordinates": [
+          { "latitude": 45.7231, "longitude": 5.08064 },
+        ]
+      }]
+    );
+    
+    // Close the modal
+    (document.getElementById('my_modal_2') as HTMLFormElement).close()
+    
+    // Create new oracle
+    let cid = createNewOracle(formData.get("url"))
+
+    // Read the oracle
+    const readData = await factory.readOracle("QmcnFTSHEogWEhtXhRKaKPVrR3hmMk2xqERqAQTs9u7i9s");
+
+    console.log("Read data:", readData)
 
   }
 
@@ -224,7 +252,7 @@ export default function Dashboard() {
               {markers.map((marker, index) => (
 
                 <MarkerOnGoogle
-                  key={index}
+                  key={"marker-" + index}
                   lat={marker.latitude}
                   lng={marker.longitude}
                   color={marker.color}
@@ -271,7 +299,7 @@ export default function Dashboard() {
                   </label>
 
                   <label className="input input-bordered flex items-center gap-2 mb-5">
-                    <input type="text" name="url" placeholder="URL car position" className="grow" value="https://662013b53bf790e070aeeff6.mockapi.io/api/position/Position/1" />
+                    <input type="text" name="url" placeholder="URL car position" className="grow" defaultValue="https://662013b53bf790e070aeeff6.mockapi.io/api/position/Position/1" />
                   </label>
 
                   <button className="btn" type="submit">

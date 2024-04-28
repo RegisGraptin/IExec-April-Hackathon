@@ -23,6 +23,9 @@ importers:
       next:
         specifier: 14.2.3
         version: 14.2.3(@babel/core@7.24.4(supports-color@8.1.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      node-fetch:
+        specifier: 2.6.1
+        version: 2.6.1
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -3759,6 +3762,10 @@ packages:
   node-fetch-native@1.6.4:
     resolution: {integrity: sha512-IhOigYzAKHd244OC0JIMIUrjzctirCmPkaIfhDeGcEETWof5zKYUW7e7MYvChGWh/4CJeXEgsRyGzuF334rOOQ==}
 
+  node-fetch@2.6.1:
+    resolution: {integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==}
+    engines: {node: 4.x || >=6.0.0}
+
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
@@ -7441,7 +7448,7 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@walletconnect/core@2.11.2(bufferutil@4.0.8)(encoding@0.1.13)(utf-8-validate@6.0.3)':
+  '@walletconnect/core@2.11.2(bufferutil@4.0.8)(utf-8-validate@6.0.3)':
     dependencies:
       '@walletconnect/heartbeat': 1.2.1
       '@walletconnect/jsonrpc-provider': 1.0.13
@@ -7457,7 +7464,7 @@ snapshots:
       '@walletconnect/types': 2.11.2
       '@walletconnect/utils': 2.11.2
       events: 3.3.0
-      isomorphic-unfetch: 3.1.0(encoding@0.1.13)
+      isomorphic-unfetch: 3.1.0
       lodash.isequal: 4.5.0
       uint8arrays: 3.1.1
     transitivePeerDependencies:
@@ -7474,7 +7481,6 @@ snapshots:
       - '@upstash/redis'
       - '@vercel/kv'
       - bufferutil
-      - encoding
       - ioredis
       - uWebSockets.js
       - utf-8-validate
@@ -7490,7 +7496,7 @@ snapshots:
       '@walletconnect/jsonrpc-types': 1.0.3
       '@walletconnect/jsonrpc-utils': 1.0.8
       '@walletconnect/modal': 2.6.2(@types/react@18.3.1)(react@18.3.1)
-      '@walletconnect/sign-client': 2.11.2(bufferutil@4.0.8)(encoding@0.1.13)(utf-8-validate@6.0.3)
+      '@walletconnect/sign-client': 2.11.2(bufferutil@4.0.8)(utf-8-validate@6.0.3)
       '@walletconnect/types': 2.11.2
       '@walletconnect/universal-provider': 2.11.2(bufferutil@4.0.8)(encoding@0.1.13)(utf-8-validate@6.0.3)
       '@walletconnect/utils': 2.11.2
@@ -7630,9 +7636,9 @@ snapshots:
     dependencies:
       tslib: 1.14.1
 
-  '@walletconnect/sign-client@2.11.2(bufferutil@4.0.8)(encoding@0.1.13)(utf-8-validate@6.0.3)':
+  '@walletconnect/sign-client@2.11.2(bufferutil@4.0.8)(utf-8-validate@6.0.3)':
     dependencies:
-      '@walletconnect/core': 2.11.2(bufferutil@4.0.8)(encoding@0.1.13)(utf-8-validate@6.0.3)
+      '@walletconnect/core': 2.11.2(bufferutil@4.0.8)(utf-8-validate@6.0.3)
       '@walletconnect/events': 1.0.1
       '@walletconnect/heartbeat': 1.2.1
       '@walletconnect/jsonrpc-utils': 1.0.8
@@ -7655,7 +7661,6 @@ snapshots:
       - '@upstash/redis'
       - '@vercel/kv'
       - bufferutil
-      - encoding
       - ioredis
       - uWebSockets.js
       - utf-8-validate
@@ -7695,7 +7700,7 @@ snapshots:
       '@walletconnect/jsonrpc-types': 1.0.3
       '@walletconnect/jsonrpc-utils': 1.0.8
       '@walletconnect/logger': 2.1.2
-      '@walletconnect/sign-client': 2.11.2(bufferutil@4.0.8)(encoding@0.1.13)(utf-8-validate@6.0.3)
+      '@walletconnect/sign-client': 2.11.2(bufferutil@4.0.8)(utf-8-validate@6.0.3)
       '@walletconnect/types': 2.11.2
       '@walletconnect/utils': 2.11.2
       events: 3.3.0
@@ -9145,12 +9150,10 @@ snapshots:
 
   isobject@3.0.1: {}
 
-  isomorphic-unfetch@3.1.0(encoding@0.1.13):
+  isomorphic-unfetch@3.1.0:
     dependencies:
-      node-fetch: 2.7.0(encoding@0.1.13)
+      node-fetch: 2.6.1
       unfetch: 4.2.0
-    transitivePeerDependencies:
-      - encoding
 
   isows@1.0.3(ws@8.13.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)):
     dependencies:
@@ -9860,6 +9863,8 @@ snapshots:
       minimatch: 3.1.2
 
   node-fetch-native@1.6.4: {}
+
+  node-fetch@2.6.1: {}
 
   node-fetch@2.7.0(encoding@0.1.13):
     dependencies:
