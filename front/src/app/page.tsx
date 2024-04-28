@@ -20,7 +20,7 @@ function App() {
               RouteGuard
             </h1>
             <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-              A new solution for tracking and managing your vehicles securely and privately.
+              A new solution for monitoring and managing your vehicles securely and privately.
               By leveraging the power of blockchain, we provide real-time insights into
               your fleet's movements while ensuring the integrity and confidentiality of your data.
             </p>
@@ -45,7 +45,7 @@ function App() {
 
           <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-              Track Your Fleet in Real-Time
+              Monitor Your Fleet in Real-Time
             </h2>
             <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
               Gain full visibility into how your fleet moves, interacts, and exchanges information.
